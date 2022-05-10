@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header Files\acrxEntryPoint.h" />
+    <ClInclude Include="Header Files\cmdFmap.h" />
+    <ClInclude Include="Header Files\constFmap.h" />
+    <ClInclude Include="Header Files\fmap.h" />
+    <ClInclude Include="Header Files\json.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source Files\acrxEntryPoint.cpp" />
+    <ClCompile Include="Source Files\cmdFmap.cpp" />
+    <ClCompile Include="Source Files\fmap.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AE3A8C60-B9D6-44F3-B699-D405AA1C5BCA}</ProjectGuid>
+    <PlatformToolset>v141</PlatformToolset>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\inc\arx\rxsdk_Releasecfg.props" />
+    <Import Project="..\inc\arx\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\inc\arx\rxsdk_Releasecfg.props" />
+    <Import Project="..\inc\arx\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\inc\arx\rxsdk_Debugcfg.props" />
+    <Import Project="..\inc\arx\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\inc\arx\rxsdk_Debugcfg.props" />
+    <Import Project="..\inc\arx\arx.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\inc\arx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_TOOLKIT_IN_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <StringPooling>
+      </StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\lib-x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\inc\arx\RxExport.def</ModuleDefinitionFile>
+      <AdditionalDependencies>grxport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRThreadAttribute>
+      </CLRThreadAttribute>
+      <CLRImageType>Default</CLRImageType>
+      <CLRUnmanagedCodeCheck>
+      </CLRUnmanagedCodeCheck>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\libxl\include_cpp;.\Header Files;C:\Qt\4.8.0\include\Qt;C:\Qt\4.8.0\include;C:\Qt\4.8.0\include\QtGui;..\inc\grx;..\inc\arx;..\fmapLib\Header Files;..\inc;..\xlnt-master\include;D:\PDAL-2.2.0-src;D:\PDAL-2.2.0-src\pdal;D:\PDAL-2.2.0-src\vendor;D:\PDAL-2.2.0-src\vendor\nlohmann;D:\PDAL-2.2.0-src\vendor\nanoflann;D:\PDAL-2.2.0-src\vendor\eigen;D:\PDAL-2.2.0-src\vendor\arbiter;D:\PDAL-2.2.0-src\vendor\pdalboost;..\pcxio\Header Files;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64;_WIN64;_TOOLKIT_IN_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <StringPooling>
+      </StringPooling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\lib-x64;..\fmaplib\x64\Debug;C:\Qt\4.8.0\lib;..\inc;..\libxl\lib64;C:\Qt\4.8.0;C:\Qt\4.8.0\include\QtGui;C:\Qt\4.8.0\include;..\xlnt-lib\source\Release;..\pcxio\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>C:\Futurmap\Dev-Outils\GStarCAD\GRX20\inc\arx\RxExport.def</ModuleDefinitionFile>
+      <AdditionalDependencies>pcxio.lib;xlnt.lib;libxl.lib;grxport.lib;gcad.lib;gcap.lib;gcax.lib;gcdb.lib;gced.lib;gcgs.lib;gcui.lib;gcut.lib;gmap.lib;gmdb.lib;gplt.lib;TD_AcisBuilder.lib;TD_Alloc.lib;TD_Ave.lib;TD_BmpExport.lib;TD_Br.lib;TD_BrepRenderer.lib;TD_Db.lib;TD_DbRoot.lib;TD_DgnImport.lib;TD_DgnUnderlay.lib;TD_Dwf7Export.lib;TD_Dwf7Import.lib;TD_DwfUnderlay.lib;TD_DynBlocks.lib;TD_Ge.lib;TD_Gi.lib;TD_Gs.lib;TD_Key.lib;TD_PdfExport.lib;TD_PDFToolkit.lib;TD_PdfUnderlay.lib;TD_Root.lib;TD_Sm.lib;TD_SpatialIndex.lib;TD_STLExport.lib;QAxContainer.lib;QAxContainerd.lib;QAxServer.lib;QAxServerd.lib;QtCLucene4.lib;QtCLucened4.lib;QtCore4.lib;QtCored4.lib;QtDesigner4.lib;QtDesignerComponents4.lib;QtDesignerComponentsd4.lib;QtDesignerd4.lib;QtGui4.lib;QtGuid4.lib;QtHelp4.lib;QtHelpd4.lib;qtmain.lib;qtmaind.lib;QtNetwork4.lib;QtNetworkd4.lib;QtOpenGL4.lib;QtOpenGLd4.lib;QtSql4.lib;QtSqld4.lib;QtSvg4.lib;QtSvgd4.lib;QtTest4.lib;QtTestd4.lib;QtUiTools.lib;QtUiToolsd.lib;QtXml4.lib;QtXmld4.lib;fmapLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRThreadAttribute>
+      </CLRThreadAttribute>
+      <CLRImageType>Default</CLRImageType>
+      <CLRUnmanagedCodeCheck>
+      </CLRUnmanagedCodeCheck>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\inc\arx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_TOOLKIT_IN_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\lib-x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\inc\arx\RxExport.def</ModuleDefinitionFile>
+      <AdditionalDependencies>grxport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRThreadAttribute>
+      </CLRThreadAttribute>
+      <CLRImageType>Default</CLRImageType>
+      <CLRUnmanagedCodeCheck>
+      </CLRUnmanagedCodeCheck>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\Header Files;C:\Qt\4.8.0\include;C:\Qt\4.8.0\include\QtGui;..\inc\grx;..\inc\arx;..\fmaplib\Header Files;..\xlnt-master\include;%(AdditionalIncludeDirectories);..\xlnt-master\third-party;..\xlnt-master\source;..\xlnt-master\third-party\libstudxml;..\xlnt-master\third-party\miniz;..\xlnt-lib\source\Release</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64;_WIN64;_TOOLKIT_IN_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\lib-x64;C:\Qt\4.8.0\lib;..\fmaplib\x64\Release;C:\Program Files\PCL 1.8.1\3rdParty\Boost\lib;..\xlnt-lib\source\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\inc\arx\RxExport.def</ModuleDefinitionFile>
+      <AdditionalDependencies>xlnt.lib;grxport.lib;gcad.lib;gcap.lib;gcax.lib;gcdb.lib;gced.lib;gcgs.lib;gcui.lib;gcut.lib;gmap.lib;gmdb.lib;gplt.lib;fmaplib.lib;TD_AcisBuilder.lib;TD_Alloc.lib;TD_Ave.lib;TD_BmpExport.lib;TD_Br.lib;TD_BrepRenderer.lib;TD_Db.lib;TD_DbRoot.lib;TD_DgnImport.lib;TD_DgnUnderlay.lib;TD_Dwf7Export.lib;TD_Dwf7Import.lib;TD_DwfUnderlay.lib;TD_DynBlocks.lib;TD_Ge.lib;TD_Gi.lib;TD_Gs.lib;TD_Key.lib;TD_PdfExport.lib;TD_PDFToolkit.lib;TD_PdfUnderlay.lib;TD_Root.lib;TD_Sm.lib;TD_SpatialIndex.lib;TD_STLExport.lib;QAxContainer.lib;QAxContainerd.lib;QAxServer.lib;QAxServerd.lib;QtCLucene4.lib;QtCLucened4.lib;QtCore4.lib;QtCored4.lib;QtDesigner4.lib;QtDesignerComponents4.lib;QtDesignerComponentsd4.lib;QtDesignerd4.lib;QtGui4.lib;QtGuid4.lib;QtHelp4.lib;QtHelpd4.lib;qtmain.lib;qtmaind.lib;QtNetwork4.lib;QtNetworkd4.lib;QtOpenGL4.lib;QtOpenGLd4.lib;QtSql4.lib;QtSqld4.lib;QtSvg4.lib;QtSvgd4.lib;QtTest4.lib;QtTestd4.lib;QtUiTools.lib;QtUiToolsd.lib;QtXml4.lib;QtXmld4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <CLRThreadAttribute>
+      </CLRThreadAttribute>
+      <CLRImageType>Default</CLRImageType>
+      <CLRUnmanagedCodeCheck>
+      </CLRUnmanagedCodeCheck>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>
+      </ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>.\x64\Release\fmap.grx</OutputFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
